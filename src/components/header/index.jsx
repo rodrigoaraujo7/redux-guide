@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from 'react-redux'
 
-import UserActionTypes from '../../redux/user/action-types'
+import { loginUser, logoutUser } from '../../redux/user/actions';
 
 // Components
 import Cart from "../cart/index";
@@ -22,22 +22,13 @@ function Header() {
 
   // using the dispatch hook
   const dispatch = useDispatch();
+
   const handleLoginClick = () => {
-    dispatch({ //entering the user-reduce condition
-      type: UserActionTypes.LOGIN, // type is required
-      payload: { // payload isn't required
-        name: 'Rodrigo',
-        email: 'rodrigo@gmail.com'
-      },
-    })
+    dispatch(loginUser({ name: 'Rodrigo', email: 'rodrigo@gmail.com' }))
   }
 
   const handleLogoutClick = () => {
-    dispatch({ //entering the user-reduce condition
-      type: UserActionTypes.LOGOUT, // type is required
-      // without payload, payload is automatically defined null
-      // payload: null,
-    })
+    dispatch(logoutUser())
   }
 
   return (
