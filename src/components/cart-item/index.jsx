@@ -3,10 +3,10 @@ import { AiOutlinePlus, AiOutlineMinus, AiOutlineClose } from "react-icons/ai";
 // redux imports
 import { useDispatch } from "react-redux";
 import {
-  decreaseProductQuantity,
   increaseProductQuantity,
+  decreaseProductQuantity,
   removeProductFromCart
-} from "../../redux/cart/actions";
+} from "../../redux/cart/slice";
 
 // Styles
 import * as Styles from "./styles";
